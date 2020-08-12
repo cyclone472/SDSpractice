@@ -1,0 +1,10 @@
+package P1920;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1920\\input"));
+	}
+
+}

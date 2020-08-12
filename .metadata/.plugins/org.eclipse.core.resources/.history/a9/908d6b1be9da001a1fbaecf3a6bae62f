@@ -1,0 +1,18 @@
+package P1339;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+	static int N;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1339\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.nextInt();
+	}
+
+}

@@ -1,0 +1,18 @@
+package P1759;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+	static int L, C;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1062\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		L = Integer.parseInt(sc.next());
+		C = Integer.parseInt(sc.next());
+	}
+
+}

@@ -1,0 +1,36 @@
+package P1039;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static char[] N;
+	static int K;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1039\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.next().toCharArray();
+		K = Integer.parseInt(sc.next());
+		
+		char max = '0';
+		for (int i = 1; i < N.length; i++) {
+			max = (max < N[i] ? N[i] : max);
+		}
+		System.out.println(max);
+		
+		
+		if (N.length - 1 <= K) {
+			Arrays.sort(N);
+			K -= (N.length - 1);
+		}
+		for (int i = 0; i < N; i++) {
+			
+		}
+	}
+
+}

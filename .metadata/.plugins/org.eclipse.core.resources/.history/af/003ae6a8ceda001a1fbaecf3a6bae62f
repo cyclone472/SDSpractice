@@ -1,0 +1,15 @@
+package P1920;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1920\\input"));
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

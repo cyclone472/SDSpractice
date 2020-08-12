@@ -1,0 +1,22 @@
+package P1806;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main {
+	static int n, s;
+	static int[] arr;
+	
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		getInput();
+		
+	}
+	
+	static void getInput() throws Exception {
+		System.setIn(new FileInputStream("src\\P1806\\input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+	}
+}

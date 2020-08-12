@@ -1,0 +1,29 @@
+package P1062;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int N, K;
+	static String[] words;
+	static boolean[] visited;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		System.setIn(new FileInputStream("src\\P1062\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = Integer.parseInt(sc.next());
+		K = Integer.parseInt(sc.next());
+		words = new String[N];
+		visited = new boolean[26];
+		visited['a' - 'a'] = visited['n' - 'a'] = visited['t' - 'a'] =
+			visited['i' - 'a'] = visited['c' - 'a'] = true;
+		
+		for(int i = 0; i < N; i++) {
+			words[i] = sc.next().replaceAll("[antic]", "");
+		}
+		System.out.println(Arrays.toString(words));
+	}
+}

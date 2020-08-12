@@ -1,0 +1,47 @@
+package P1062;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int N, K;
+	static String[] words;
+	static boolean[] visited;
+	static int selectedCount;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		System.setIn(new FileInputStream("src\\P1062\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = Integer.parseInt(sc.next());
+		K = Integer.parseInt(sc.next());
+		words = new String[N];
+		visited = new boolean[26];
+		visited['a' - 'a'] = visited['n' - 'a'] = visited['t' - 'a'] =
+			visited['i' - 'a'] = visited['c' - 'a'] = true;
+		selectedCount = 5;
+		
+		for(int i = 0; i < N; i++) {
+			words[i] = sc.next().replaceAll("[antic]", "");
+		}
+		System.out.println(Arrays.toString(words));
+		System.out.println(Arrays.toString(visited));
+	}
+	
+	static void dfs(int index) {
+		if(selectedCount == K) {
+			// 읽을 수 있는 단어의 수 계산
+			return;
+		}
+		
+		visited[index] = true;
+		selectedCount++;
+		for(int i = 0; i < 26; i++) {
+			if(visited[i] == false) {
+				dfs(i);
+			}
+		}
+	}
+}

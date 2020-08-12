@@ -1,0 +1,55 @@
+package P2580;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+class Point {
+	int x, y;
+	
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+}
+
+public class Main {
+	static int[][] board;
+	static List<Point> l = new ArrayList<>();
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P2580\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		board = new int[9][9];
+		for (int y = 0; y < 9; y++) {
+			for (int x = 0; x < 9; x++) {
+				board[y][x] = Integer.parseInt(sc.next());
+				if (board[y][x] == 0)
+					l.add(new Point(x, y));
+			}
+		}
+		
+		dfs(0);
+	}
+	
+	static boolean dfs(int cnt) {
+		if(cnt == l.size())
+			return true;
+		
+		boolean[] canSet = new boolean[10];
+		for (int i = 0; i < canSet.length; i++) {
+			canSet[i] = true;
+		}
+		int x = l.get(cnt).x;
+		int y = l.get(cnt).y;
+		// 같은 열에 있는 숫자들은 후보에서 제거
+		for (int i = 0; i < 9;)
+		
+		
+		return false;
+	}
+}

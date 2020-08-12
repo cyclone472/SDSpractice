@@ -1,0 +1,42 @@
+package P9663;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+	static int N;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P9663\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = Integer.parseInt(sc.next());
+		boolean[][] board = new boolean[N][N];
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < N; j++) {
+				// board에 queen을 놓을 수 있으면 true
+				board[j][i] = true;
+			}
+		}
+		
+		solve(0, board);
+	}
+	
+	static int solve(int row, boolean[][] board) {
+		if(row == N)
+			return 1;
+		
+		int ret = 0;
+		boolean canPick = false;
+		for(int i = 0; i < N; i++) {
+			if(board[row][i] == true) {
+				board[row][i] = false;
+				canPick = true;
+			}
+		}
+		
+		return -1;
+	}
+}

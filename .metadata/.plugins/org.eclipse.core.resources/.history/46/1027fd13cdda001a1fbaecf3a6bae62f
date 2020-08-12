@@ -1,0 +1,81 @@
+package P1713;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Picture {
+	int init_time;
+	int recommand;
+	int student;
+	
+	public Picture (int init, int student) {
+		init_time = init;
+		recommand = 0;
+		this.student = student;
+	}
+}
+
+public class Main {
+	static int N;
+	static int[] arr;
+	static Picture[] pic;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1713\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = Integer.parseInt(sc.next());
+		int tmp = Integer.parseInt(sc.next());
+		arr = new int[tmp];
+		pic = new Picture[N];
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = Integer.parseInt(sc.next());
+			// 학생 사진이 이미 있는지 확인
+			boolean isExist = false;
+			for(int j = 0; j < pic.length; j++) {
+				// 있으면 추천받은 횟수만 올림
+				if (pic[j] != null && pic[j].student == arr[i]) {
+					pic[j].recommand++;
+					isExist = true;
+					break;
+				}
+			}
+			// 없으면 사진틀에 비어있는 자리가 있는지 확인
+			if (!isExist) {
+				boolean canPost = false;
+				int replaceIdx = -1;
+				for (int j = 0; j < pic.length; j++) {
+					// 비어있는 자리가 있으면 사진틀에다 넣는다.
+					if (pic[j] == null) {
+						canPost = true;
+						pic[j] = new Picture(i, arr[i]);
+						break;
+					}
+					// 비어있는 자리가 없으면 교체
+					else if (replaceIdx == -1)
+						replaceIdx = j;
+					else {
+						// 추천받은 횟수가 가장 적으면서 가장 오래된 학생을 교체
+						if(pic[j].recommand < pic[replaceIdx].recommand)
+							replaceIdx = j;
+						else if (pic[j].recommand == pic[replaceIdx].recommand
+							&& pic[j].init_time < pic[replaceIdx].init_time)
+							replaceIdx = j;
+					}
+				}
+				
+				if(!canPost) {
+					pic[replaceIdx] = new Picture(i, arr[i]);
+				}
+			}
+		}		
+		sc.close();
+		
+		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(pic));
+	}
+
+}

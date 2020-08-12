@@ -1,0 +1,13 @@
+package P1806;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1806\\input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		
+	}
+
+}

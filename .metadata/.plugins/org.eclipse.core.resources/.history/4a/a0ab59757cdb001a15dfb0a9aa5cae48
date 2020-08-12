@@ -1,0 +1,14 @@
+package P2805;
+
+import java.io.*;
+
+public class Main {
+	static int n, m;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P2805\\input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+	}
+
+}

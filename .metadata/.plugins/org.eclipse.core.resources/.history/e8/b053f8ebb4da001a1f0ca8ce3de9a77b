@@ -1,0 +1,35 @@
+package P1759;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int L, C;
+	static char[] alpha;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1759\\input"));
+		Scanner sc = new Scanner(System.in);
+		L = Integer.parseInt(sc.next());
+		C = Integer.parseInt(sc.next());
+		alpha = new char[C];
+		for(int i = 0; i < alpha.length; i++) {
+			alpha[i] = sc.next().charAt(0);
+		}
+		Arrays.sort(alpha);
+		
+		for(int i = 0; i < alpha.length; i++) {
+			printAns(i, 0, "");			
+		}
+		System.out.println(Arrays.toString(alpha));
+	}
+
+	static void printAns(int idx, int len, String prev) {
+		if(len == L) {
+			
+		}
+	}
+}

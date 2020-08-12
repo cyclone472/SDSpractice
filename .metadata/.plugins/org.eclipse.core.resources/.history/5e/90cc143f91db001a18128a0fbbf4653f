@@ -1,0 +1,38 @@
+package P2143;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main {
+	static int t;
+	static int n, m;
+	static int[] a;
+	static int[] b;
+	
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		getInput();
+		
+	}
+	
+	static void getInput() throws Exception {
+		System.setIn(new FileInputStream("src\\P2143\\input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		t = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(st.nextToken());
+		a = new int[n];
+		
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < n; i++)
+			a[i] = Integer.parseInt(st.nextToken());
+		
+		st = new StringTokenizer(br.readLine());
+		m = Integer.parseInt(st.nextToken());
+		b = new int[m];
+		for (int i = 0; i < m; i++)
+			
+	}
+}

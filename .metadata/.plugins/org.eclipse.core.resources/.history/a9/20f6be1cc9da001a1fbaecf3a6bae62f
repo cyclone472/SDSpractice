@@ -1,0 +1,10 @@
+package P1713;
+
+public class Main {
+	static int N;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

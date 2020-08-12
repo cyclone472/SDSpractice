@@ -1,0 +1,23 @@
+package P2580;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+	static int[][] board;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P2580\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		board = new int[9][9];
+		for (int y = 0; y < 9; y++) {
+			for (int x = 0; x < 9; x++) {
+				board[y][x] = Integer.parseInt(sc.next());
+			}
+		}
+	}
+
+}

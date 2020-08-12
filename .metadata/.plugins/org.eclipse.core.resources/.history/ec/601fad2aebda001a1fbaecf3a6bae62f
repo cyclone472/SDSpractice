@@ -1,0 +1,53 @@
+package P1339;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int N;
+	static String[] num;
+	static boolean[] containAlpha;
+	static int numAlpha;
+	static int[] alphaToNum;
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1339\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.nextInt();
+		num = new String[N];
+		containAlpha = new boolean[26];
+		
+		for (int i = 0; i < N; i++) {
+			num[i] = sc.next();
+			for (int j = 0; j < num[i].length(); j++) {
+				int idx = num[i].charAt(j) - 'A';
+				containAlpha[idx] = true;
+			}
+		}
+		
+		numAlpha = 0;
+		for (int i = 0; i < 26; i++) {
+			if (containAlpha[i])
+				numAlpha++;
+		}
+		alphaToNum = new int[numAlpha];
+		
+		
+		System.out.println(Arrays.toString(containAlpha));
+	}
+	
+	static int dfs(int cnt) {
+		if (cnt == numAlpha)
+			return calc();
+		
+		return -1;
+	}
+	
+	static int calc() {
+		
+	}
+}

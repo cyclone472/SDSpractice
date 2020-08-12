@@ -1,0 +1,11 @@
+package P1713;
+
+public class Main {
+	static int N;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("src\\P1713\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

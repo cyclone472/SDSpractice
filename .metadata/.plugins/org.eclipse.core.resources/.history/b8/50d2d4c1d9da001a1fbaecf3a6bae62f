@@ -1,0 +1,61 @@
+package P9663;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+	static int N;
+	static boolean[] board;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		//System.setIn(new FileInputStream("src\\P9663\\input.txt"));
+		Scanner sc = new Scanner(System.in);
+		
+		N = Integer.parseInt(sc.next());
+		board = new boolean[N][N];
+		
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < N; j++) {
+				// board에 queen을 놓을 수 있으면 true
+				board[j][i] = true;
+			}
+		}
+		
+		System.out.println(solve(0));
+	}
+	
+	static int solve(int row) {
+		if(row == N) {
+			return 1;
+		}
+		
+		int ret = 0;		
+		for(int col = 0; col < N; col++) {
+			if(canPlace(row, col)) {
+				board[col][row] = false;
+				ret += solve(row + 1);
+				board[col][row] = true;
+			}
+		}		
+		return ret;
+	}
+
+	static boolean canPlace(int row, int col) {
+		int[] dx = {-1, -1, 0, 1, 1, 1, 0, -1};
+		int[] dy = {0, 1, 1, 1, 0, -1, -1, -1};
+		
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < 8; j++) {
+				int x = row + i * dx[j];
+				int y = col + i * dy[j];
+				if (x < 0 || x >= N || y < 0 || y >= N)
+					continue;
+				if(board[y][x] == false)
+					return false;
+			}
+		}
+		return true;
+	}
+}
